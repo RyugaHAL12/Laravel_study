@@ -5,8 +5,11 @@
         </h2>
     </x-slot>
 	<div class="max-w-7xl mx-auto px-6">
+		{{-- <form method="POST" action="{{route('post.store')}}">
+			@csrf
+			--}}
 		<form>
-			<div class="mt-8">
+			<div class="mt-8"> 
 				<div class="w-full flex flex-col">
 					<label for="title" class="font-semibold mt-4 text-white">件名</label>
 					<input type="text" name="title" class="w-auto py-2 bg-gray-500 border border-white rounded-md text-white" id="title">
