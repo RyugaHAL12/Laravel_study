@@ -4,11 +4,17 @@
             {{ __('Post') }}
         </h2>
     </x-slot>
+	<div class="max-w-7x1 mx-auto px-6">
+		@if(session('message'))
+			<div class="text-white font-bold">
+				{{session('message')}}
+			</div>
+		@endif
+	</div>
+
 	<div class="max-w-7xl mx-auto px-6">
-		{{-- <form method="POST" action="{{route('post.store')}}">
+		<form method="POST" action="{{route('post.store')}}">
 			@csrf
-			--}}
-		<form>
 			<div class="mt-8"> 
 				<div class="w-full flex flex-col">
 					<label for="title" class="font-semibold mt-4 text-white">件名</label>

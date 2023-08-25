@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -11,7 +12,12 @@ class PostController extends Controller
 		return view('post.create');
 	}
 
-	public function store($response){
-		return view('post.creat');
+	public function store(Request $request){
+		$post = Post::create([
+			'title'=>$request->title,
+			'body'=>$request->body
+		]);
+
+		return back()->with('message','Post Success !');
 	}
 }

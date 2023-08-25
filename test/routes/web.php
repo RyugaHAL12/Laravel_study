@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ArticleController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('post/create',[PostController::class,'create'])->name('post.create');
-// Route::post('post/store',PostController::class,'store')->name('post.store');
+Route::post('post/store',[PostController::class,'store'])->name('post.store');
 
 require __DIR__.'/auth.php';
