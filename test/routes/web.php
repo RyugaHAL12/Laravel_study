@@ -39,4 +39,8 @@ Route::get('videogallery',function(){
 	return view('utility.youtube');
 })->name('videogallery');
 
+Route::get('postcode',function(){
+	return view('utility.postcode');
+})->name('postcode');
+
 require __DIR__.'/auth.php';
