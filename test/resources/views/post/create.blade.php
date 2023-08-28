@@ -17,14 +17,19 @@
 			@csrf
 			<div class="mt-8"> 
 				<div class="w-full flex flex-col">
-					<label for="title" class="font-semibold mt-4 text-white">件名</label>
-					<input type="text" name="title" class="w-auto py-2 bg-gray-500 border border-white rounded-md text-white" id="title">
+					<label for="title" class="font-semibold mt-4 text-white">Title</label>
+					<x-input-error :messages="$errors->get('title')" class="mt-2 text-white" />
+						<input type="text" name="title" 
+						class="w-auto py-2 bg-gray-500 border border-white rounded-md text-white" id="title"
+						value="{{old('title')}}">
+					</div>
 				</div>
-			</div>
-
-			<div class="w-full flex flex-col">
-				<label for="body" class="font-semibold mt-4 text-white">本文</label>
-				<textarea name="body" class="w-auto py-2 bg-gray-500 border border-white rounded-md text-white" id="body" cols="30" rows="5"></textarea>
+				
+				<div class="w-full flex flex-col">
+					<label for="body" class="font-semibold mt-4 text-white">Content</label>
+					<x-input-error :messages="$errors->get('body')" class="mt-2 text-white" />
+				<textarea name="body" class="w-auto py-2 bg-gray-500 border border-white rounded-md text-white" 
+				id="body" cols="30" rows="5">{{old('body')}}</textarea>
 			</div>
 
 			<x-primary-button class="mt-4">送信する</x-primary-button>

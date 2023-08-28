@@ -13,11 +13,19 @@ class PostController extends Controller
 	}
 
 	public function store(Request $request){
-		$post = Post::create([
-			'title'=>$request->title,
-			'body'=>$request->body
+		$validated = $request->validate([
+				'title'=> 'required|max:30',
+				'body' => 'required|max:500',
 		]);
 
+		$validated['user_id'] = auth()->id();
+
+		$post = Post::create($validated);
 		return back()->with('message','Post Success !');
+	}
+
+	public function index(){
+		$posts = Post::all();
+		return view('post.index',compact('posts'));
 	}
 }

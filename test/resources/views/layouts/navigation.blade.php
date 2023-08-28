@@ -21,6 +21,16 @@
                         {{ __('Post') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
+                        {{ __('Threads') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('youtube')" :active="request()->routeIs('youtube')">
+                        {{ __('Youtube') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

@@ -33,5 +33,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('post/create',[PostController::class,'create'])->name('post.create');
 Route::post('post/store',[PostController::class,'store'])->name('post.store');
+Route::get('post/index',[PostController::class,'index'])->name('post.index');
+
+Route::get('youtube',function(){
+	return view('utility.youtube');
+})->name('youtube');
 
 require __DIR__.'/auth.php';
