@@ -32,8 +32,8 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('postcode')" :active="request()->routeIs('postcode')">
-                        {{ __('PostCode') }}
+                    <x-nav-link :href="route('zipcode')" :active="request()->routeIs('zipcode')">
+                        {{ __('Zipcode') }}
                     </x-nav-link>
                 </div>
             </div>
